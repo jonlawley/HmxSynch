@@ -1,0 +1,3 @@
+[submodule "lib/VlcDriver"]
+	path = lib/VlcDriver
+	url = https://github.com/jonlawley/VlcDriver
