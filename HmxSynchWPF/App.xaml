@@ -1,8 +1,19 @@
 ﻿<Application x:Class="HmxSynchWPF.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="MainWindow.xaml">
+             xmlns:hmxSynchWpf="clr-namespace:HmxSynchWPF">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <hmxSynchWpf:AppBootStrapper x:Key="bootstrapper" />
+                    <Style x:Key="WindowStyle" TargetType="{x:Type Window}" >
+                        <Setter Property="WindowStyle" Value="ThreeDBorderWindow" />
+                        <Setter Property="SizeToContent" Value="WidthAndHeight" />
+                        <Setter Property="ResizeMode" Value="NoResize" />
+                    </Style>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -1,8 +1,8 @@
 ﻿namespace HmxSynchWPF
 {
-    public partial class MainWindow
+    public partial class AppView
     {
-        public MainWindow()
+        public AppView()
         {
             InitializeComponent();
         }
