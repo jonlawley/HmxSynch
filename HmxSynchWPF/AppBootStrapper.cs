@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Dynamic;
 using System.Windows;
 using Caliburn.Micro;
 
@@ -9,7 +8,7 @@ namespace HmxSynchWPF
 {
     class AppBootStrapper : BootstrapperBase
     {
-        private IWindowManager _windowManager;
+        private IHmxWindowManager _windowManager;
         private readonly SimpleContainer _container = new SimpleContainer();
 
         public AppBootStrapper()
@@ -34,6 +33,8 @@ namespace HmxSynchWPF
                { "SizeToContent", SizeToContent.Manual },
                { "Height" , 600  },
                { "Width"  , 400 },
+               { "Title", Properties.Resources.MainWindowTitle_HumaxSynch},
+               { "Owner", null }
            };
 
             DisplayRootViewFor<IAppViewModel>(settings);

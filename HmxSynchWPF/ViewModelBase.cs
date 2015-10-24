@@ -2,12 +2,12 @@
 
 namespace HmxSynchWPF
 {
-    public class ViewModelBase
+    public class ViewModelBase : Screen
     {
-        public ViewModelBase(IWindowManager windowManager)
+        public ViewModelBase(IHmxWindowManager windowManager)
         {
             WindowManager = windowManager;
         }
-        protected IWindowManager WindowManager {  get; private set; }
+        protected IHmxWindowManager WindowManager { get; private set; }
     }
 }

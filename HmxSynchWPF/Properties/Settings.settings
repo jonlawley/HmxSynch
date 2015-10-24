@@ -1,7 +1,23 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="HmxSynchWPF.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SqlLiteCreateScript" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CREATE TABLE "Episodes" (
+	`Id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	`Name`	TEXT,
+	`Time`	TEXT,
+	`Converted`	INTEGER NOT NULL DEFAULT 0,
+	`Convert`	INTEGER NOT NULL DEFAULT 1,
+	`FilePath`	TEXT,
+	`ConvertAudio`	NUMERIC DEFAULT 0
+);</Value>
+    </Setting>
+    <Setting Name="ScratchDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\secure\Source\ProjectScratch\ScratchDir</Value>
+    </Setting>
+    <Setting Name="MainOutputDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\secure\Source\ProjectScratch\UploadDir</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

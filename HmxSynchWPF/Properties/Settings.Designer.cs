@@ -8,22 +8,57 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HmxSynchWPF.Properties
-{
-
-
+namespace HmxSynchWPF.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "12.0.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("CREATE TABLE \"Episodes\" (\r\n\t`Id`\tINTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQU" +
+            "E,\r\n\t`Name`\tTEXT,\r\n\t`Time`\tTEXT,\r\n\t`Converted`\tINTEGER NOT NULL DEFAULT 0,\r\n\t`Co" +
+            "nvert`\tINTEGER NOT NULL DEFAULT 1,\r\n\t`FilePath`\tTEXT,\r\n\t`ConvertAudio`\tNUMERIC D" +
+            "EFAULT 0\r\n);")]
+        public string SqlLiteCreateScript {
+            get {
+                return ((string)(this["SqlLiteCreateScript"]));
+            }
+            set {
+                this["SqlLiteCreateScript"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\secure\\Source\\ProjectScratch\\ScratchDir")]
+        public string ScratchDir {
+            get {
+                return ((string)(this["ScratchDir"]));
+            }
+            set {
+                this["ScratchDir"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\secure\\Source\\ProjectScratch\\UploadDir")]
+        public string MainOutputDir {
+            get {
+                return ((string)(this["MainOutputDir"]));
+            }
+            set {
+                this["MainOutputDir"] = value;
             }
         }
     }
