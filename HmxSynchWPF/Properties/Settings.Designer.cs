@@ -61,5 +61,30 @@ namespace HmxSynchWPF.Properties {
                 this["MainOutputDir"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\secure\\Source\\Offline\\Humax2Gdrive\\Humax2Gdrive\\Humax2GdriveTests\\HumaxtestDir" +
+            "\\My Video")]
+        public string HumaxDirSource {
+            get {
+                return ((string)(this["HumaxDirSource"]));
+            }
+            set {
+                this["HumaxDirSource"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public string PollingTimeSpanInMinutes {
+            get {
+                return ((string)(this["PollingTimeSpanInMinutes"]));
+            }
+            set {
+                this["PollingTimeSpanInMinutes"] = value;
+            }
+        }
     }
 }

@@ -34,6 +34,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>cloud.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Caliburn.Micro">
       <HintPath>..\packages\Caliburn.Micro.Core.2.0.2\lib\net45\Caliburn.Micro.dll</HintPath>
@@ -46,6 +50,9 @@
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Hardcodet.Wpf.TaskbarNotification">
+      <HintPath>..\packages\Hardcodet.NotifyIcon.Wpf.1.0.5\lib\net45\Hardcodet.Wpf.TaskbarNotification.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
@@ -64,6 +71,7 @@
     <Reference Include="System.Data.SQLite.Linq">
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.98.1\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -84,22 +92,33 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Data\HmxContext.cs" />
-    <Compile Include="HmxWindowManager.cs" />
+    <Compile Include="JobManager\ILinearJobManager.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="RecordingManager\IRecordingManager.cs" />
+    <Compile Include="RecordingManager\RecordingManager.cs" />
+    <Compile Include="Utilities\Converters\InverseBoolConverter.cs" />
+    <Compile Include="Utilities\SettingsProvider\ISettingsProvider.cs" />
+    <Compile Include="Utilities\SettingsProvider\SettingsProvider.cs" />
+    <Compile Include="Utilities\Task\ITaskRunner.cs" />
+    <Compile Include="Utilities\Task\TaskRunner.cs" />
+    <Compile Include="Utilities\Timer\ITimer.cs" />
+    <Compile Include="Utilities\Timer\Timer.cs" />
+    <Compile Include="WindowManager\HmxWindowManager.cs" />
     <Compile Include="HumaxDirSource.cs" />
-    <Compile Include="IHmxWindowManager.cs" />
-    <Compile Include="LinearJobManager.cs" />
+    <Compile Include="WindowManager\IHmxWindowManager.cs" />
+    <Compile Include="JobManager\LinearJobManager.cs" />
     <Compile Include="Models\Episode.cs" />
     <Compile Include="Models\Series.cs" />
-    <Compile Include="UtilityMethods.cs" />
+    <Compile Include="Utilities\UtilityMethods.cs" />
     <Compile Include="ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppView.xaml.cs">
+    <Compile Include="AppView\AppView.xaml.cs">
       <DependentUpon>AppView.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppBootStrapper.cs" />
-    <Compile Include="AppViewModel.cs" />
-    <Compile Include="IAppViewModel.cs" />
+    <Compile Include="AppView\AppViewModel.cs" />
+    <Compile Include="AppView\IAppViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -137,10 +156,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="AppView.xaml">
+    <Page Include="AppView\AppView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cloud.ico" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

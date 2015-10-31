@@ -6,7 +6,8 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary>
-                    <hmxSynchWpf:AppBootStrapper x:Key="bootstrapper" />
+                    <hmxSynchWpf:AppBootStrapper x:Key="bootstrapper"/>
+                    <BooleanToVisibilityConverter  x:Key="BooleanToVisibilityConverter" />
                     <Style x:Key="WindowStyle" TargetType="{x:Type Window}" >
                         <Setter Property="WindowStyle" Value="ThreeDBorderWindow" />
                         <Setter Property="SizeToContent" Value="WidthAndHeight" />

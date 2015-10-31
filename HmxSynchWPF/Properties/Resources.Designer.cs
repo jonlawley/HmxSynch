@@ -61,6 +61,16 @@ namespace HmxSynchWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        public static System.Drawing.Icon cloud {
+            get {
+                object obj = ResourceManager.GetObject("cloud", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Humax Synch.
         /// </summary>
         public static string MainWindowTitle_HumaxSynch {

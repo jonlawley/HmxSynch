@@ -19,5 +19,11 @@
     <Setting Name="MainOutputDir" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\secure\Source\ProjectScratch\UploadDir</Value>
     </Setting>
+    <Setting Name="HumaxDirSource" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\secure\Source\Offline\Humax2Gdrive\Humax2Gdrive\Humax2GdriveTests\HumaxtestDir\My Video</Value>
+    </Setting>
+    <Setting Name="PollingTimeSpanInMinutes" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

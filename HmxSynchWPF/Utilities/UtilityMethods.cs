@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HmxSynchWPF
+namespace HmxSynchWPF.Utilities
 {
     static class UtilityMethods
     {

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using Caliburn.Micro;
@@ -11,12 +12,13 @@ namespace HmxSynchWPF
         protected override Window CreateWindow(object rootModel, bool isDialog, object context, IDictionary<string, object> settings)
         {
             var window = base.CreateWindow(rootModel, isDialog, context, settings);
-            ResourceDictionary resourceDictionary = App.Current.Resources.MergedDictionaries.First();
+            var resourceDictionary = Application.Current.Resources.MergedDictionaries.First();
             window.Style = resourceDictionary["WindowStyle"] as Style;
             if (MainWindow == null)
             {
                 MainWindow = window;
             }
+
             return window;
         }
 
@@ -25,6 +27,14 @@ namespace HmxSynchWPF
             if (MainWindow != null)
             {
                 MainWindow.Hide();
+            }
+        }
+
+        public void RestoreFromTray()
+        {
+            if (MainWindow != null)
+            {
+                MainWindow.Show();
             }
         }
     }

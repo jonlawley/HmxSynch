@@ -3,10 +3,10 @@ using VLCDriver;
 
 namespace HmxSynchWPF
 {
-    public class LinearJobManager
+    public class LinearJobManager : ILinearJobManager
     {
-        private VlcDriver driver;
-        public LinearJobManager(VlcDriver vlcdriver)
+        private IVlcDriver driver;
+        public LinearJobManager(IVlcDriver vlcdriver)
         {
             driver = vlcdriver;
             vlcdriver.OnJobStateChange += driver_OnJobStateChange;
