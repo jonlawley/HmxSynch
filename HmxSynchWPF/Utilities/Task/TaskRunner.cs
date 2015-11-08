@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Threading.Tasks;
-using log4net;
+using NLog;
 
 namespace HmxSynchWPF.Utilities.Task
 {
     public class TaskRunner : ITaskRunner
     {
-        private ILog _log;
+        private ILogger _log;
 
-        public void Start(System.Threading.Tasks.Task task, ILog log)
+        public void Start(System.Threading.Tasks.Task task, ILogger log)
         {
             _log = log;
             task.ContinueWith(t => InvokeError(t, t.Exception.InnerException),
@@ -19,7 +19,7 @@ namespace HmxSynchWPF.Utilities.Task
 
         private void InvokeError(System.Threading.Tasks.Task task, Exception innerException)
         {
-            _log.Error("Error occurred when synching", innerException);
+            _log.Error(innerException, "Error occurred when synching");
         }
     }
 }

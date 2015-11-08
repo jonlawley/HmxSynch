@@ -9,13 +9,14 @@ using HmxSynchWPF.Data;
 using HmxSynchWPF.Models;
 using HmxSynchWPF.Utilities.SettingsProvider;
 using HmxSynchWPF.Utilities.Task;
+using NLog;
 using VLCDriver;
 
 namespace HmxSynchWPF.RecordingManager
 {
     public class RecordingManager : IRecordingManager, INotifyPropertyChanged
     {
-        private readonly log4net.ILog _log;
+        private readonly ILogger _log;
         private readonly ISettingsProvider _settingsProvider;
         private readonly IVlcDriver _vlcDriver;
         private readonly ILinearJobManager _linearJobManager;
@@ -23,7 +24,7 @@ namespace HmxSynchWPF.RecordingManager
         private readonly HumaxDirSource _hmDirSource;
         private bool _synchInProgress;
 
-        public RecordingManager(log4net.ILog log, ISettingsProvider settingsProvider, IVlcDriver vlcDriver, ILinearJobManager linearJobManager, ITaskRunner taskRunner)
+        public RecordingManager(ILogger log, ISettingsProvider settingsProvider, IVlcDriver vlcDriver, ILinearJobManager linearJobManager, ITaskRunner taskRunner)
         {
             _log = log;
             _settingsProvider = settingsProvider;

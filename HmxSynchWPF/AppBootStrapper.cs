@@ -9,7 +9,7 @@ using HmxSynchWPF.Utilities.SettingsProvider;
 using HmxSynchWPF.Utilities.Task;
 using HmxSynchWPF.Utilities.Timer;
 using VLCDriver;
-using ILog = log4net.ILog;
+using LogManager = NLog.LogManager;
 
 namespace HmxSynchWPF
 {
@@ -32,7 +32,7 @@ namespace HmxSynchWPF
             base.Configure();
 
             _windowManager = new HmxWindowManager();
-            var logger = log4net.LogManager.GetLogger(typeof(log4net.Appender.FileAppender));
+            var logger = LogManager.GetCurrentClassLogger();
             _container.RegisterPerRequest(typeof(ITaskRunner), null, typeof(TaskRunner));
             _container.RegisterInstance(typeof(IWindowManager), null, _windowManager);
             _container.RegisterInstance(typeof(IHmxWindowManager), null, _windowManager);

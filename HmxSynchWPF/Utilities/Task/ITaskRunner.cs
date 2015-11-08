@@ -1,7 +1,9 @@
-﻿namespace HmxSynchWPF.Utilities.Task
+﻿using NLog;
+
+namespace HmxSynchWPF.Utilities.Task
 {
     public interface ITaskRunner
     {
-        void Start(System.Threading.Tasks.Task task, log4net.ILog log);
+        void Start(System.Threading.Tasks.Task task, ILogger log);
     }
 }

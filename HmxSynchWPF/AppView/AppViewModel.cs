@@ -6,7 +6,7 @@ using HmxSynchWPF.Data;
 using HmxSynchWPF.RecordingManager;
 using HmxSynchWPF.Utilities.SettingsProvider;
 using HmxSynchWPF.Utilities.Timer;
-using ILog = log4net.ILog;
+using NLog;
 
 namespace HmxSynchWPF
 {
@@ -14,7 +14,7 @@ namespace HmxSynchWPF
     {
         private bool _isClosing;
         public IRecordingManager RecordingManager { get; private set; }
-        private readonly ILog _logger;
+        private readonly ILogger _logger;
         private ITimer _pollingTimer;
         private readonly ISettingsProvider _settingsProvider;
 
@@ -32,7 +32,7 @@ namespace HmxSynchWPF
             }
         }
 
-        public AppViewModel(IHmxWindowManager windowManager, IRecordingManager recordingManager, ILog logger, ITimer timer, ISettingsProvider settingsProvider)
+        public AppViewModel(IHmxWindowManager windowManager, IRecordingManager recordingManager, ILogger logger, ITimer timer, ISettingsProvider settingsProvider)
             : base(windowManager)
         {
             RecordingManager = recordingManager;
